@@ -27,7 +27,6 @@ more_movies = [
   {:title => 'Bodyguard Of Lies', :rating => 'R',
     :release_date => '08-Jun-2025'}
 ]
-]
 
 more_movies.each do |movie|
   Movie.create!(movie)
