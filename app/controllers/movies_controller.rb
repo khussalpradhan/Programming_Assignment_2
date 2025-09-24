@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    #Sorting logic
-    allowed_sort_columns = ['title', 'rating','release_date']
+    # Sorting logic
+    allowed_sort_columns = [ "title", "rating", "release_date" ]
     sort_column = params[:sort_by]
     direction = params[:direction]
 
@@ -17,9 +17,9 @@ class MoviesController < ApplicationController
     end
 
     # Session state values for default sorting
-    @sort_column = session[:sort_by] || 'title'
-    @direction = session[:direction] || 'asc'
-    
+    @sort_column = session[:sort_by] || "title"
+    @direction = session[:direction] || "asc"
+
     # Fetch and sort the movies
     @movies = Movie.order(@sort_column => @direction)
   end
