@@ -1,16 +1,25 @@
-<p style="color: green"><%= notice %></p>
+0,0 @@
+<h1>All Movies</h1>
 
-<% content_for :title, "Movies" %>
+<table id="movies">
+  <thead>
+    <tr>
+      <th>Movie Title</th>
+      <th>Rating</th>
+      <th>Release Date</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date.strftime("%B %d, %Y") %></td>
+        <td><%= link_to "More about #{movie.title}", movie_path(movie) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New movie", new_movie_path %>
+<%= link_to 'Add new movie', new_movie_path %>
