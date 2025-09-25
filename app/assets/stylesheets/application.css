@@ -59,9 +59,10 @@ table#movies th.sorted-asc a, table#movies th.sorted-desc a {
   color: yellow; /* Orange text for sorted header */
 }
 
+table#movies td.sorted {
+  background-color: linen; 
+}
 
-
-/* Links and Buttons */
 a {
   color: #3498db;
   text-decoration: none;
@@ -79,6 +80,10 @@ a:hover {
   border-radius: 4px;
   margin-top: 1rem;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .btn:hover {
@@ -86,3 +91,53 @@ a:hover {
   text-decoration: none;
 }
 
+.movie-details p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.movie-details strong {
+  color: #2c3e50;
+  margin-right: 0.5rem;
+}
+
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Form Styles */
+.movie-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.movie-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.movie-form input[type="text"],
+.movie-form textarea,
+.movie-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for padding and width */
+}
+
+.movie-form .actions {
+  align-items: center;
+}
